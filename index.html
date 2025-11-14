@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Let’s Go LEGO! — Neon</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1 class="logo">Let’s Go <span class="neon">LEGO!</span></h1>
+      <p class="tagline">Paint your pixel ✨</p>
+    </header>
+
+    <section class="controls card">
+      <!-- ROW 1 -->
+      <div class="row top-row">
+        <label>Grid Size</label>
+        <select id="gridSize">
+          <option value="16">16 × 16</option>
+          <option value="24">24 × 24</option>
+          <option value="32" selected>32 × 32</option>
+          <option value="48">48 × 48</option>
+          <option value="64">64 × 64</option>
+        </select>
+        <button id="createBtn" class="btn primary">Create Grid</button>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="row bottom-row">
+        <label>Color</label>
+        <input type="color" id="colorPicker" value="#ff4dff" />
+
+        <button id="eraserBtn" class="btn subtle">Eraser</button>
+        <button id="clearBtn" class="btn warning">Clear</button>
+      </div>
+    </section>
+
+    <section id="stage" class="canvas-wrap card">
+      <div id="grid" class="grid"></div>
+      <div id="dateDisplay" style="margin-top:10px;"></div>
+    </section>
+
+    <section class="controls card" style="text-align:center;">
+      <button id="saveBtn" class="btn neon">Save Work</button>
+      <div id="message" class="msg"></div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="controls card" style="text-align:center;">
+      <h3>Gallery</h3>
+      <div id="gallery" class="gallery-grid"></div>
+    </section>
+
+    <footer class="foot">
+      <small>Neon pixel-brick playground — saved to Cloudinary</small>
+    </footer>
+  </main>
+
+  <!-- html2canvas (capture grid as PNG) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <!-- JS -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
